@@ -63,12 +63,12 @@ logging = logging.getLogger()
 
 
 bot = Client("bot",
-             bot_token=os.environ.get("BOT_TOKEN"),
-             api_id=int(os.environ.get("API_ID")),
-             api_hash=os.environ.get("API_HASH"))
-auth_users = [6981453498,5318243282,5987970971,6061552289]
+             bot_token=os.environ.get("BOT_TOKEN", "6671692787:AAHxl5p2yCIBmmj2wQnd8O8GHxNLHzf99K0"),
+             api_id=int(os.environ.get("API_ID", "18618422")),
+             api_hash=os.environ.get("API_HASH", "f165b1caec3cfa4df943fe1cbe82d22a"))
+auth_users = [6050277919,5890592765,5809339058,2112898623]
 sudo_users = auth_users
-sudo_groups = [-1001911553062]
+sudo_groups = [-1002031454860]
 
 shell_usage = f"**USAGE:** Executes terminal commands directly via bot.\n\n<pre>/shell pip install requests</pre>"
 def one(user_id):
@@ -116,7 +116,7 @@ keyboard = InlineKeyboardMarkup(
         [
             InlineKeyboardButton(
                 text="Devloper",
-                url="https://t.me/TIGER0054",
+                url="https://t.me/Mohitag24",
             ),
             InlineKeyboardButton(
                 text="Repo",
