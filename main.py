@@ -27,8 +27,8 @@ import logging
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format="%(
-        asctime)s - %(levelname)s - %(message)s [%(filename)s:%(lineno)d]",
+    format=
+    "%(asctime)s - %(levelname)s - %(message)s [%(filename)s:%(lineno)d]",
     datefmt="%d-%b-%y %H:%M:%S",
     handlers=[
         RotatingFileHandler("Assist.txt", maxBytes=50000000, backupCount=10),
@@ -36,6 +36,7 @@ logging.basicConfig(
     ],
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
 
 logging = logging.getLogger()
 
