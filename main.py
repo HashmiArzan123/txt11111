@@ -43,7 +43,7 @@ logging = logging.getLogger()
 bot = Client(
     "bot",
     bot_token=os.environ.get(
-        "BOT_TOKEN", "6671692787:AAHxl5p2yCIBmmj2wQnd8O8GHxNLHzf99K0"
+        "BOT_TOKEN", "6975608232:AAFnzb2F_Pwh9wKqmxIQlhipGIEO7CVWIvU"
     ),
     api_id=int(os.environ.get("API_ID", "18618422")),
     api_hash=os.environ.get("API_HASH", "f165b1caec3cfa4df943fe1cbe82d22a"),
