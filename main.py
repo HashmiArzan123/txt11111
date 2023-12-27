@@ -314,4 +314,7 @@ async def account_login(bot: Client, m: Message):
             await m.reply_text("BATCH SUCCESSFULLY DOWNLOADED ✅")
 
 
-bot.run()            
+bot.start()
+idle()
+bot.stop()
+logger.info("Bot Stoped ;)")         
