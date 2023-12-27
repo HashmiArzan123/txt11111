@@ -298,3 +298,16 @@ async def account_login(bot: Client, m: Message):
                             await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
                             count += 1
                             time.sleep(1)
+                    except Exception as e:
+                        await m.reply_text(
+                            f"**DOWNLOADING FAILED 🥺**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`"
+                        )
+                        continue
+
+
+            except Exception as e:
+                await m.reply_text(e)
+            await m.reply_text("BATCH SUCCESSFULLY DOWNLOADED ✅")
+
+
+bot.run()            
