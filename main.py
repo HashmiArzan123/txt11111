@@ -132,14 +132,14 @@ async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"HELLO I AM TXT DOWNLOADER BOT  [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /TIGER")
 
 
-@bot.on_message(filters.command("STOP"))
+@bot.on_message(filters.command("Stop"))
 async def restart_handler(_, m):
     await m.reply_text("**STOPPED**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
-@bot.on_message(filters.command(["TIGER"]))
+@bot.on_message(filters.command(["txt"]))
 async def account_login(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
     if user is not None and user not in sudo_users:
@@ -149,6 +149,7 @@ async def account_login(bot: Client, m: Message):
         editable = await m.reply_text(
             "SEND TXT FILE 🗃️")
     input: Message = await bot.listen(editable.chat.id)
+if input.document:
     x = await input.download()
     await input.delete(True)
     logging.info(2333)
@@ -170,7 +171,12 @@ async def account_login(bot: Client, m: Message):
            await m.reply_text("Invalid file input.")
            os.remove(x)
            return
-    
+else:
+    content = input.text
+    content = content.split("\n")
+    links = []
+    for i in content:
+        links.append(i.split("://", 1))    
    
     await editable.edit(f"Total links found are **{len(links)}**\n\nSEND FROM WHERE YOU WANT TO DOWNLOAD INITIAL is **1**")
     input0: Message = await bot.listen(editable.chat.id)
